@@ -29,6 +29,16 @@ form input, form button {
   background: white;
 }
 
+form input {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+form button {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 form button {
   color: #3f4bb8;
   background: white;
@@ -39,4 +49,57 @@ form button {
 form button:hover {
   background: #3f4bb8;
   color: white;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.todo-button {
+  width: 44px;
+  height: 53px;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.trash-btn, .complete-btn {
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.complete-btn {
+  background: green;
+}
+
+.trash-btn {
+  background: red;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
 }
