@@ -45,6 +45,6 @@ function deleteCheck(e) {
   }
   // completed
   if(item.classList[0] === 'complete-btn') {
-    item.parentElement.style.textDecoration = 'line-through';
+    item.parentElement.classList.toggle('completed');
   }
 }
