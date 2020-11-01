@@ -8,10 +8,12 @@ todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
 
 // Functions
-function addTodo(event) {
-  if(todo-input.length === 0) {
+function addTodo(event, value) {
+  if(todoInput.value.length !== 0) {
     event.preventDefault();
-  }
+    } else {
+      return todoInput.value;
+    }
   // create li
   const todoDiv = document.createElement('div');
   todoDiv.classList.add('todo');
