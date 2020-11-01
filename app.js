@@ -8,12 +8,8 @@ todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
 
 // Functions
-function addTodo(event, value) {
-  if(todoInput.value.length !== 0) {
-    event.preventDefault();
-    } else {
-      return todoInput.value;
-    }
+function addTodo(event) {
+  todoInput.value.length !== 0 ? event.preventDefault() : todoInput.value;
   // create li
   const todoDiv = document.createElement('div');
   todoDiv.classList.add('todo');
@@ -37,11 +33,15 @@ function addTodo(event, value) {
   todoInput.value = '';
 }
 
-function deleteCheck(e) {
-  const item = e.target;
+function deleteCheck(event) {
+  const item = event.target;
   // delete
   if(item.classList[0] === 'trash-btn') {
-    item.parentElement.remove();
+    item.parentElement.classList.add('fall');
+    // item.parentElement.remove();
+    item.parentElement.addEventListener('transitionend', function() {
+      item.parentElement.remove();
+    });
   }
   // completed
   if(item.classList[0] === 'complete-btn') {
